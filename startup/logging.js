@@ -5,12 +5,12 @@ require('express-async-errors');
 
 const logger = winston.createLogger({
     transports: [
-        new winston.transports.File({
-            handleExceptions: true,
-            filename: './applogs/error.log',
-            level: 'error',
-            format: winston.format.json()
-        }),       
+        // new winston.transports.File({
+        //     handleExceptions: true,            
+        //     level: 'error',
+        //     filename: 'error.log',
+        //     format: winston.format.json()
+        // }),       
         new winston.transports.Console({
             handleExceptions: true,
             level: 'info',
@@ -21,5 +21,7 @@ const logger = winston.createLogger({
         })
     ]
 });
+
+
 
 module.exports = logger;
