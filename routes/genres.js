@@ -3,7 +3,8 @@ const { Genre, validate } = require("../models/genre");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    res.send('Hello this is genres route');
+    let genre = await Genre.find();
+    res.send(genre);
 });
 
 router.post("/", async (req, res) => {
