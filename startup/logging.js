@@ -7,7 +7,7 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.File({
             handleExceptions: true,
-            filename: 'error.log',
+            filename: './applogs/error.log',
             level: 'error',
             format: winston.format.json()
         }),       
