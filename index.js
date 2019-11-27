@@ -11,6 +11,4 @@ const server = app.listen(port, () =>
   logger.info(`Listening on port ${port}...`)
 );
 
-aaa.oi();
-
 module.exports = server;
