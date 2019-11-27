@@ -7,7 +7,7 @@ require("./startup/config")();
 require("./startup/cors")(app);
 require("./startup/routes")(app);
 require("./startup/db")();
-require("./startup/mysql_db")();
+// require("./startup/mysql_db")();
 
 
 const port = process.env.PORT || config.get("port");
