@@ -3,10 +3,15 @@ const auth = require("../middleware/auth");
 const { Task } = require("../models/task");
 const router = express.Router();
 
-// router.get("/", async (req, res) => {
-//     let genre = await Genre.find();
-//     res.send(genre);
-// });
+router.get("/", async (req, res) => {
+    try {
+        let tasks = await Task.find().sort({ dueDate : 'desc' }) ;
+        res.send(tasks);
+    } catch(e){
+        return res.status(400).send(e.message);
+    }
+    
+});
 
 router.post("/", auth, async (req, res) => {
     // const { error } = validate(req.body);

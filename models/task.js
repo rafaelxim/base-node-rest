@@ -14,10 +14,12 @@ const taskSchema = new mongoose.Schema({
   taskType : {
     type: String,
     required: true,
-    enum : ['Série', 'Filme', 'Livro'],
-     
+    enum : ['Série', 'Filme', 'Livro'],     
   },
-  dueDate : Date
+  dueDate : {
+    type: Date ,
+    default : Date.now()
+  }
 });
 
 const Task = mongoose.model('Task', taskSchema);
