@@ -4,8 +4,12 @@ const { Task } = require("../models/task");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
+
+    const sort = req.query.order || '-dueDate' ;
+
     try {
-        let tasks = await Task.find().sort({ dueDate : 'desc' }) ;
+        let tasks = await Task.find().sort(sort) ;
+
         res.send(tasks);
     } catch(e){
         return res.status(400).send(e.message);
@@ -22,7 +26,8 @@ router.post("/", auth, async (req, res) => {
             name: req.body.name,
             description : req.body.description ,
             taskType: req.body.taskType ,
-            dueDate: req.body.dueDate 
+            dueDate: req.body.dueDate, 
+            poster: req.body.poster
         });
     
         task = await task.save();

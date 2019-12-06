@@ -19,5 +19,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.12",
     "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "express-swagger-generator": "^1.1.15",
+    "nodemon": "^2.0.1"
   }
 }
