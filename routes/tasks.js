@@ -27,7 +27,9 @@ router.post("/", auth, async (req, res) => {
             description: req.body.description,
             taskType: req.body.taskType,
             dueDate: req.body.dueDate,
-            poster: req.body.poster
+            poster: req.body.poster,
+            season : req.body.season,
+            episode : req.body.episode
         });
 
         task = await task.save();

@@ -22,6 +22,12 @@ const taskSchema = new mongoose.Schema({
   },
   poster : {
     type: String
+  },
+  season : {
+    type: String
+  },
+  episode : {
+    type : String
   }
 });
 
