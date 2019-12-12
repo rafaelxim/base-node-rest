@@ -5,10 +5,14 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
 
+    let query = {};
     const sort = req.query.order || '-dueDate';
+    const taskType = req.query.tasktype || null;
+
+    if(taskType) query.taskType = taskType;
 
     try {
-        let tasks = await Task.find().sort(sort);
+        let tasks = await Task.find(query).sort(sort);
 
         res.send(tasks);
     } catch (e) {
